@@ -1,10 +1,10 @@
-import { useState } from "react"
-import { AddCategory } from "./components/AddCategory";
-import { GifGrid } from "./components/GifGrid";
+import { useState,Fragment } from "react"
+import { AddCategory,GifGrid } from "./components";
+
 
 export const GifApp = () => {
 
-    const [categories, setCategories] = useState(['jigglypuff']);
+    const [categories, setCategories] = useState(['squirtle']);
    
     const onAddCategory = (newCategoria) =>{
         if(categories.includes(newCategoria))return;
@@ -12,9 +12,9 @@ export const GifApp = () => {
     }
 
     return (
-        <>
+        <Fragment>
             {/*Titulo */}
-            <h1>Demilio Gif</h1>
+            <h1>Demilio GIF</h1>
             {/*Search */}
             <AddCategory
                 onNewCategory={ onAddCategory } 
@@ -31,6 +31,6 @@ export const GifApp = () => {
                 ))
             }
          
-        </>
+        </Fragment>
     )
 }
